@@ -3,33 +3,65 @@ import './App.css';
 import { useState, useRef } from 'react';
 
 function App() {
-    //useRerender
-    const test = useRef(1);
-    // {Current : 1}
-    const [d, setD] = useState(1);
+    //Input Box
+    const inputRef = useRef(null);
+    // {Current: null}
 
-    console.log("Rerender",test)
+
     return (
         <div className="App">
-            <button 
-            onClick={() => {
-                test.current = test.current + 1;
-                console.log(test);
-            }}
-            >
-                Increment Test
-            </button>
+            <input ref={inputRef} />
 
-            <button
+            <button 
                 onClick={() => {
-                    // Force re-rendering
-                    setD((p) => p + 1);
+                    console.log(inputRef.current.value);
                 }}
             >
-                Rerender
+                Get InputBox
             </button>
+            
       </div>
-    );
+
+);
+
+
+
+
+
+
+
+
+
+
+
+    
+    // //useRerender
+    // const test = useRef(1);
+    // // {Current : 1}
+    // const [d, setD] = useState(1);
+
+    // console.log("Rerender",test)
+    // return (
+    //     <div className="App">
+    //         <button 
+    //         onClick={() => {
+    //             test.current = test.current + 1;
+    //             console.log(test);
+    //         }}
+    //         >
+    //             Increment Test
+    //         </button>
+
+    //         <button
+    //             onClick={() => {
+    //                 // Force re-rendering
+    //                 setD((p) => p + 1);
+    //             }}
+    //         >
+    //             Rerender
+    //         </button>
+    //   </div>
+    // );
 
 
 
