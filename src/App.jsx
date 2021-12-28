@@ -1,25 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // onMouseMove
+    const [mouse, setMouse] = useState("");
+    return (
+        <div 
+            onMouseMove={(e) => {
+                console.log(e.clientX, e.clientY);
+                setMouse(`X: ${e.clientX} - Y:${e.clientY}`);
+            }}
+      className="App"
+      style={{
+          display: "flex",
+          background: "coral",
+          width: "300px",
+          height: "300px",
+      }}
+      >
+          {mouse}
+      </div>
+    );
 }
 
 export default App;
