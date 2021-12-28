@@ -7,7 +7,6 @@ function App() {
     const inputRef = useRef(null);
     // {Current: null}
 
-
     return (
         <div className="App">
             <input ref={inputRef} />
@@ -20,7 +19,49 @@ function App() {
                 Get InputBox
             </button>
             
-      </div>
+            <div style={{
+                    display: "flex",
+                    background: "coral",
+                    width: "50px",
+                    height: "300px",
+                }}
+                >1
+            </div>
+            <div style={{
+                    display: "flex",
+                    background: "red",
+                    width: "50px",
+                    height: "300px",
+                }}
+                >2
+            </div>
+            <div style={{
+                    display: "flex",
+                    background: "blue",
+                    width: "50px",
+                    height: "300px",
+                }}
+                >3
+            </div>
+            <div style={{
+                    display: "flex",
+                    background: "aquamarine",
+                    width: "50px",
+                    height: "300px",
+                }}
+                >4
+            </div>
+            //scrollIntoView Btn Working
+            <button 
+                onClick={() => {
+                    inputRef.current.scrollIntoView({
+                        behavior: "smooth",
+                    });
+                }}
+            >
+                Go To The Top
+            </button>
+        </div>
 
 );
 
