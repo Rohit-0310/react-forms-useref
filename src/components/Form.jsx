@@ -1,10 +1,13 @@
+import { useRef } from "react";
 import { useState } from "react/cjs/react.development"
 
 export const Form = () => {
     const [form, setForm] = useState(null);
+    const ref = useRef(null);
 
     const handleChange = (e) => {
-        // 
+        // console.log(e.target.name, e.target.value)
+        console.log(ref.current.files)
         const { name, value } = e.target;
 
         setForm({
@@ -36,6 +39,8 @@ export const Form = () => {
                 name="address" 
                 type="text" 
                 placeholder="Enter Your address" />
+                
+            <input ref={ref} onChange={handleChange} type="file" />
             
             <input type="submit" value="submit" />
         </form>
